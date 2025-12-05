@@ -42,10 +42,34 @@ body{
 	display:inline-block;
 	
 }
-.hero-video {
+
+.k8-1-video {
   width: 100%;
   height: 100%;
   transition: opacity 1s ease;
+}
+
+.video-container2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-poster {
+    transition: opacity 0.5s ease;
+}
+
+.k8-5-video {
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease;
+}
+
+.k8-5-video.playing {
+    opacity: 1;
+}
+
+.k8-5-video.ended {
+    opacity: 0;
 }
 
 #loading_screen{
