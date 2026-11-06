@@ -401,6 +401,14 @@ body{
 	
 	}
 
+	/* Tile grids choose their own columns: up to 9 tiles get 3 columns, 10 or more keep the
+	   default 4. Only applies above 800px; the smaller screen sizes below stay as they are. */
+	@media(min-width:801px){
+		.container:has(> .box):not(:has(> :nth-child(10 of .box))){
+			column-count:3;
+		}
+	}
+
 	@media(max-width:800px){
 		.container{
 			column-count:3;

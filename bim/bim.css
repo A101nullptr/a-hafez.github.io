@@ -1,23 +1,6 @@
 /* BIM & Software side. Everything shared with the architecture side comes from
    styles.css, pagestyle.css and Extra.css; this file only adds what is new. */
 
-/* Short lists: three wider columns, so the fourth isn't left empty */
-.container.cols3 {
-	column-count: 3;
-}
-
-@media (max-width: 600px) {
-	.container.cols3 {
-		column-count: 2;
-	}
-}
-
-@media (max-width: 400px) {
-	.container.cols3 {
-		column-count: 1;
-	}
-}
-
 /* Images carry width/height so the columns don't jump while they load */
 .container .box .imgbox img {
 	display: block;
