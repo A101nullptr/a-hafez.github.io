@@ -169,29 +169,8 @@
 	}
 }
 
-.gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 1em;
-}
-
-.gallery figure {
-	margin: 0;
-	background: #f2f2f7;
-	padding: 0.6em;
-}
-
-.gallery img {
-	display: block;
-	width: 100%;
-	height: auto;
-	margin: 0;
-}
-
-.gallery figcaption {
-	font-size: 14px;
-	color: #2c2c2e;
-	margin-top: 0.5em;
+.doc-img + .steps {
+	margin-top: 1em;
 }
 
 .doc-img {
