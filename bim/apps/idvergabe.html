@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IdVergabe | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/idvergabe.png" alt="">IdVergabe</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">20 identification parameters on every element, in minutes</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; SQL Server master data</h5>
+          <h6>Stack | C# / .NET 4.8 &middot; Revit API &middot; WPF &middot; SQL Server</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/CsqwES0SOgE?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=CsqwES0SOgE&amp;rel=0&amp;playsinline=1" title="IdVergabe demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">Every element in a model needs a consistent set of identification parameters: element, unit, floor, room, assembly and parent IDs. By hand, that takes about a week for roughly 20,000 values. This add-in does it in about 5 minutes. It analyses the model's geometry, sorts elements into floors and spatial containers, reads the parameter definitions from a SQL Server master-data database, and calculates 20 parameters by hierarchy rules. It can run everything, or only the parameters you tick, with dependencies selected automatically.</p>
+        <h2>How the model is read</h2>
+        <div class="diagram"><svg viewBox="0 0 940 224" role="img" aria-label="Hierarchy and run sequence"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><text x="0" y="16" text-anchor="start" class="d-label">MODEL AS A VIRTUAL STRUCTURE</text><rect x="0.0" y="26" width="212.5" height="76" class="d-box"/><text x="106.25" y="60.0" text-anchor="middle" class="d-tb">Floor</text><text x="106.25" y="80.0" text-anchor="middle" class="d-t">from level names</text><rect x="242.5" y="26" width="212.5" height="76" class="d-box"/><text x="348.75" y="51.0" text-anchor="middle" class="d-tb">Container</text><text x="348.75" y="71.0" text-anchor="middle" class="d-t">unit, balcony module,</text><text x="348.75" y="89.0" text-anchor="middle" class="d-t">stair core / entrance</text><path d="M212.5 64.0L240.5 64.0" class="d-line" marker-end="url(#arr)"/><rect x="485.0" y="26" width="212.5" height="76" class="d-box"/><text x="591.25" y="51.0" text-anchor="middle" class="d-tb">Elements</text><text x="591.25" y="71.0" text-anchor="middle" class="d-t">grouped by type,</text><text x="591.25" y="89.0" text-anchor="middle" class="d-t">sorted radially</text><path d="M455.0 64.0L483.0 64.0" class="d-line" marker-end="url(#arr)"/><rect x="727.5" y="26" width="212.5" height="76" class="d-dark"/><text x="833.75" y="51.0" text-anchor="middle" class="d-wb">VirtualProject</text><text x="833.75" y="71.0" text-anchor="middle" class="d-w">values held in memory,</text><text x="833.75" y="89.0" text-anchor="middle" class="d-w">written back at the end</text><path d="M697.5 64.0L725.5 64.0" class="d-line" marker-end="url(#arr)"/><path d="M833.8 102V114H106.25V142" class="d-flow" marker-end="url(#arrb)"/><text x="118.25" y="132" text-anchor="start" class="d-label">WHAT EACH RUN DOES</text><rect x="0.0" y="144" width="212.5" height="76" class="d-box"/><text x="106.25" y="169.0" text-anchor="middle" class="d-tb">1 Pre-checks</text><text x="106.25" y="189.0" text-anchor="middle" class="d-t">ownership,</text><text x="106.25" y="207.0" text-anchor="middle" class="d-t">read-only, group names</text><rect x="242.5" y="144" width="212.5" height="76" class="d-box"/><text x="348.75" y="169.0" text-anchor="middle" class="d-tb">2 Build structure</text><text x="348.75" y="189.0" text-anchor="middle" class="d-t">geometry assigns</text><text x="348.75" y="207.0" text-anchor="middle" class="d-t">elements to containers</text><path d="M212.5 182.0L240.5 182.0" class="d-line" marker-end="url(#arr)"/><rect x="485.0" y="144" width="212.5" height="76" class="d-box"/><text x="591.25" y="169.0" text-anchor="middle" class="d-tb">3 Master data</text><text x="591.25" y="189.0" text-anchor="middle" class="d-t">parameter GUIDs</text><text x="591.25" y="207.0" text-anchor="middle" class="d-t">from SQL Server</text><path d="M455.0 182.0L483.0 182.0" class="d-line" marker-end="url(#arr)"/><rect x="727.5" y="144" width="212.5" height="76" class="d-dark"/><text x="833.75" y="169.0" text-anchor="middle" class="d-wb">4 Calculate + write</text><text x="833.75" y="189.0" text-anchor="middle" class="d-w">one class per parameter,</text><text x="833.75" y="207.0" text-anchor="middle" class="d-w">result summary at end</text><path d="M697.5 182.0L725.5 182.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Anatomy of an ElementID</h2>
+        <div class="diagram"><svg viewBox="0 0 940 100" role="img" aria-label="Anatomy of an ElementID built from eight parts"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="58" y="16" width="112" height="46" class="d-dark"/><text x="114.0" y="45" text-anchor="middle" class="d-wb">ProjektID</text><text x="114.0" y="84" text-anchor="middle" class="d-t">project</text><rect x="172" y="16" width="112" height="46" class="d-box"/><text x="228.0" y="45" text-anchor="middle" class="d-tb">BaufeldCode</text><text x="228.0" y="84" text-anchor="middle" class="d-t">site</text><rect x="286" y="16" width="112" height="46" class="d-dark"/><text x="342.0" y="45" text-anchor="middle" class="d-wb">GebaeudeCode</text><text x="342.0" y="84" text-anchor="middle" class="d-t">building</text><rect x="400" y="16" width="86" height="46" class="d-box"/><text x="443.0" y="45" text-anchor="middle" class="d-tb">HausCode</text><text x="443.0" y="84" text-anchor="middle" class="d-t">house</text><rect x="488" y="16" width="104" height="46" class="d-dark"/><text x="540.0" y="45" text-anchor="middle" class="d-wb">GeschossNr</text><text x="540.0" y="84" text-anchor="middle" class="d-t">floor</text><rect x="594" y="16" width="76" height="46" class="d-box"/><text x="632.0" y="45" text-anchor="middle" class="d-tb">Gruppe</text><text x="632.0" y="84" text-anchor="middle" class="d-t">group</text><rect x="672" y="16" width="112" height="46" class="d-dark"/><text x="728.0" y="45" text-anchor="middle" class="d-wb">EinheitenNr</text><text x="728.0" y="84" text-anchor="middle" class="d-t">unit</text><rect x="786" y="16" width="96" height="46" class="d-box"/><text x="834.0" y="45" text-anchor="middle" class="d-tb">ElementNr</text><text x="834.0" y="84" text-anchor="middle" class="d-t">element</text></svg></div><p class="doc-cap">Each part comes from a project setting or a calculated parameter. EinheitenNr is numbered counter-clockwise around the stair core; ElementNr by radial order within a container.</p>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-clock-o" aria-hidden="true"></i><b>A week to 5 minutes</b><span>About 20,000 values per run, set the same way every time.</span></div><div><i class="fa fa-sitemap" aria-hidden="true"></i><b>Virtual model first</b><span>Calculations run on an in-memory copy of the project, which keeps Revit API load low. Values are written once, at the end.</span></div><div><i class="fa fa-puzzle-piece" aria-hidden="true"></i><b>One class per parameter</b><span>Each of the 20 rules is isolated, so one rule can change without touching the rest.</span></div><div><i class="fa fa-database" aria-hidden="true"></i><b>Master data in SQL</b><span>Parameters are resolved by GUID from a central database, not hard-coded names.</span></div><div><i class="fa fa-link" aria-hidden="true"></i><b>Dependency resolution</b><span>Ticking ElementID also selects the parameters it depends on.</span></div><div><i class="fa fa-search" aria-hidden="true"></i><b>Finds modelling errors</b><span>Problems surface in the final report, so they can be fixed early.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

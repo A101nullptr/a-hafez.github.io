@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlanExporter | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/planexporter.png" alt="">PlanExporter</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Sheets out to PDF and DWG, already correctly named</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; WinForms &middot; Revit API &middot; QR code generation</h6>
+        </div>
+        <img class="app-video" src="../images/planexporter.jpg" alt="PlanExporter">
+        <p class="app-text">Handing out plans means exporting sheets and then renaming every file. PlanExporter replaces that with a tree of sheets, a choice of single files or one combined document, optional DWGs and QR codes, and naming rules that build each file name from project, sheet or view parameters. The output folder is ready to hand out as soon as it finishes.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Export flow"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="164.0" height="76" class="d-box"/><text x="82.0" y="25.0" text-anchor="middle" class="d-tb">Select sheets</text><text x="82.0" y="45.0" text-anchor="middle" class="d-t">tree grouped by</text><text x="82.0" y="63.0" text-anchor="middle" class="d-t">chosen parameters</text><rect x="194.0" y="0" width="164.0" height="76" class="d-box"/><text x="276.0" y="25.0" text-anchor="middle" class="d-tb">Choose options</text><text x="276.0" y="45.0" text-anchor="middle" class="d-t">single or combined,</text><text x="276.0" y="63.0" text-anchor="middle" class="d-t">DWG, QR code</text><path d="M164.0 38.0L192.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="388.0" y="0" width="164.0" height="76" class="d-dark"/><text x="470.0" y="25.0" text-anchor="middle" class="d-wb">Naming rules</text><text x="470.0" y="45.0" text-anchor="middle" class="d-w">names from project,</text><text x="470.0" y="63.0" text-anchor="middle" class="d-w">sheet, view values</text><path d="M358.0 38.0L386.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="582.0" y="0" width="164.0" height="76" class="d-box"/><text x="664.0" y="25.0" text-anchor="middle" class="d-tb">Temporary QR</text><text x="664.0" y="45.0" text-anchor="middle" class="d-t">placed for export,</text><text x="664.0" y="63.0" text-anchor="middle" class="d-t">then rolled back</text><path d="M552.0 38.0L580.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="776.0" y="0" width="164.0" height="76" class="d-dark"/><text x="858.0" y="25.0" text-anchor="middle" class="d-wb">Output folder</text><text x="858.0" y="45.0" text-anchor="middle" class="d-w">PDF + DWG,</text><text x="858.0" y="63.0" text-anchor="middle" class="d-w">named and ready</text><path d="M746.0 38.0L774.0 38.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Naming rules</h2>
+        <div class="diagram"><svg viewBox="0 0 940 214" role="img" aria-label="Parameters from three sources feed one naming rule, which gives one file name per sheet"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0" y="6" width="230" height="60" class="d-box"/><text x="115.0" y="32.0" text-anchor="middle" class="d-tb">Project information</text><text x="115.0" y="52.0" text-anchor="middle" class="d-t">project-wide values</text><path d="M230 36L298 106" class="d-line" marker-end="url(#arr)"/><rect x="0" y="76" width="230" height="60" class="d-box"/><text x="115.0" y="102.0" text-anchor="middle" class="d-tb">Sheet parameters</text><text x="115.0" y="122.0" text-anchor="middle" class="d-t">number, name, your own</text><path d="M230 106L298 106" class="d-line" marker-end="url(#arr)"/><rect x="0" y="146" width="230" height="60" class="d-box"/><text x="115.0" y="172.0" text-anchor="middle" class="d-tb">View parameters</text><text x="115.0" y="192.0" text-anchor="middle" class="d-t">from the placed view</text><path d="M230 176L298 106" class="d-line" marker-end="url(#arr)"/><rect x="300" y="36" width="290" height="140" class="d-dark"/><text x="445.0" y="84.0" text-anchor="middle" class="d-wb">Naming rule</text><text x="445.0" y="104.0" text-anchor="middle" class="d-w">pick any parameters,</text><text x="445.0" y="122.0" text-anchor="middle" class="d-w">set their order</text><text x="445.0" y="140.0" text-anchor="middle" class="d-w">and the separators</text><path d="M590 106L648 106" class="d-line" marker-end="url(#arr)"/><rect x="650" y="36" width="290" height="140" class="d-box"/><text x="795.0" y="84.0" text-anchor="middle" class="d-tb">One name per sheet</text><text x="795.0" y="104.0" text-anchor="middle" class="d-t">same rule, every sheet,</text><text x="795.0" y="122.0" text-anchor="middle" class="d-t">used for PDF, DWG</text><text x="795.0" y="140.0" text-anchor="middle" class="d-t">and the QR code</text></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-undo" aria-hidden="true"></i><b>The model stays untouched</b><span>QR codes are placed temporarily for the export, then rolled back.</span></div><div><i class="fa fa-qrcode" aria-hidden="true"></i><b>QR from the file name</b><span>Each code is generated from the file name and a configured base URL.</span></div><div><i class="fa fa-sitemap" aria-hidden="true"></i><b>Your project's structure</b><span>The tree groups sheets by whichever parameters a project uses.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

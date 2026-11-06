@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schalungskegel | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/schalungskegel.png" alt="">Schalungskegel</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Formwork cones placed by structural rules</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; timber-concrete composite (HBV) ceilings</h5>
+          <h6>Stack | C# / .NET &middot; Revit API &middot; solid geometry &middot; JSON configuration</h6>
+        </div>
+        <img class="app-video" src="../images/schalungskegel.jpg" alt="Schalungskegel">
+        <p class="app-text">Formwork cones in timber-concrete composite ceilings follow strict spacing rules, which makes placing them by hand slow and easy to get wrong. This add-in reads the geometry of each ceiling element, works out where the cones belong and places the correct family type at every point. A pre-check flags ceiling elements too complex to process, and it can draw the used and leftover paths in the model, so the result can be checked instead of trusted.</p>
+        <h2>The placement rules</h2>
+        <div class="diagram"><svg viewBox="0 0 940 340" role="img" aria-label="Cone placement rules along a ceiling edge resting on a wall"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="30" y="20" width="880" height="240" class="d-box"/><text x="50" y="50" class="d-tb">Ceiling element (K-DH / K-DB / K-DA), plan view</text><rect x="30" y="260" width="880" height="26" class="d-dark"/><text x="470" y="278" text-anchor="middle" class="d-wb">Wall: the edge resting on it is the support edge</text><path d="M70 210H820" class="d-flow"/><text x="828" y="198" class="d-blue"></text><path d="M70 200V220M820 200V220" class="d-line"/><circle cx="130" cy="210" r="9" class="d-accent"/><circle cx="274" cy="210" r="9" class="d-accent"/><circle cx="418" cy="210" r="9" class="d-accent"/><circle cx="562" cy="210" r="9" class="d-accent"/><circle cx="706" cy="210" r="9" class="d-accent"/><path d="M70 137V198M130 137V198" class="d-tick" stroke-dasharray="3 3"/><path d="M70 145H130" class="d-tick"/><text x="100.0" y="137" text-anchor="middle" class="d-blue">250</text><path d="M130 137V198M274 137V198" class="d-tick" stroke-dasharray="3 3"/><path d="M130 145H274" class="d-tick"/><text x="202.0" y="137" text-anchor="middle" class="d-t">300&#8211;600</text><path d="M274 137V198M418 137V198" class="d-tick" stroke-dasharray="3 3"/><path d="M274 145H418" class="d-tick"/><text x="346.0" y="137" text-anchor="middle" class="d-t">300&#8211;600</text><path d="M418 137V198M562 137V198" class="d-tick" stroke-dasharray="3 3"/><path d="M418 145H562" class="d-tick"/><text x="490.0" y="137" text-anchor="middle" class="d-t">300&#8211;600</text><path d="M562 137V198M706 137V198" class="d-tick" stroke-dasharray="3 3"/><path d="M562 145H706" class="d-tick"/><text x="634.0" y="137" text-anchor="middle" class="d-t">300&#8211;600</text><path d="M706 137V198M820 137V198" class="d-tick" stroke-dasharray="3 3"/><path d="M706 145H820" class="d-tick"/><text x="763.0" y="137" text-anchor="middle" class="d-blue">140&#8211;500</text><text x="470" y="103" text-anchor="middle" class="d-t">cone spacing along the path, in mm</text><path d="M848 210H880M848 260H880" class="d-tick"/><path d="M866 210V260" class="d-line"/><text x="858" y="238" text-anchor="end" class="d-t">60 mm</text><text x="858" y="255" text-anchor="end" class="d-t">(65 for K-DA)</text><circle cx="40" cy="316" r="8" class="d-accent"/><text x="56" y="321" class="d-t">formwork cone</text><path d="M200 316H250" class="d-flow"/><text x="260" y="321" class="d-t">cone path, offset from the support edge</text></svg></div>
+        <h2>From geometry to placed cones</h2>
+        <ol class="steps"><li><b>Collision detection:</b> find the bottom face of the ceiling and test which edges actually meet a wall, using a 100 mm vertical drop check.</li><li><b>Special walls:</b> if a ceiling meets certain wall types, ignore its long edges and use only the short ones.</li><li><b>Path offset:</b> move the support edges into the ceiling by 60 mm, or 65 mm for K-DA ceilings.</li><li><b>Start offset:</b> push the start of the path in by 250 mm so the first cone stays clear of the corner.</li><li><b>Segmentation:</b> middle segments must be 300&#8211;600 mm and the last 140&#8211;500 mm. Long segments are split, and a last segment that is too short is balanced against the one before it.</li><li><b>Placement:</b> map the ceiling type to its family through <code>elementKeys.json</code> and place an instance at every point.</li></ol>
+        <h2>Built to be checked</h2>
+        <div class="points"><div><i class="fa fa-table" aria-hidden="true"></i><b>Rules in data</b><span>Family prefixes and type codes live in a JSON file, so they change without a rebuild.</span></div><div><i class="fa fa-shield" aria-hidden="true"></i><b>Pre-check</b><span>Ceiling elements over 14 faces are reported by ID before anything is placed.</span></div><div><i class="fa fa-eye" aria-hidden="true"></i><b>Visual audit</b><span>Used and leftover paths can be drawn in blue and red in the model.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

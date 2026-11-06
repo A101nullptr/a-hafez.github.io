@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViewFilter | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/viewfilter.png" alt="">ViewFilter</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Every view-filter task in Revit, in one window</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API &middot; JSON &middot; live language switching</h6>
+        </div>
+        <img class="app-video" src="../images/viewfilter.jpg" alt="ViewFilter">
+        <p class="app-text">View filters and visibility overrides are slow to manage in Revit, and they multiply over a project's life. ViewFilter brings all of it together: copy or remove filters between views and templates, audit the project for unused filters, empty rules and duplicates, move complete view templates to another project, and purge what's left over. The interface switches live between German and English.</p>
+        <h2>Six tools in one</h2>
+        <div class="diagram"><svg viewBox="0 0 940 296" role="img" aria-label="ViewFilter and its six modules"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="350" y="110" width="240" height="80" class="d-dark"/><text x="470.0" y="146.0" text-anchor="middle" class="d-wb">ViewFilter</text><text x="470.0" y="166.0" text-anchor="middle" class="d-w">one window, DE / EN UI</text><rect x="0" y="8" width="240" height="80" class="d-box"/><text x="120.0" y="35.0" text-anchor="middle" class="d-tb">Visibility Manager</text><text x="120.0" y="55.0" text-anchor="middle" class="d-t">copy / remove filters</text><text x="120.0" y="73.0" text-anchor="middle" class="d-t">and V/G overrides</text><rect x="350" y="8" width="240" height="80" class="d-box"/><text x="470.0" y="35.0" text-anchor="middle" class="d-tb">Filter Audit</text><text x="470.0" y="55.0" text-anchor="middle" class="d-t">unused, empty rules,</text><text x="470.0" y="73.0" text-anchor="middle" class="d-t">duplicates, orphans</text><rect x="700" y="8" width="240" height="80" class="d-box"/><text x="820.0" y="35.0" text-anchor="middle" class="d-tb">Copy Modes</text><text x="820.0" y="55.0" text-anchor="middle" class="d-t">filters only, or</text><text x="820.0" y="73.0" text-anchor="middle" class="d-t">overrides only</text><rect x="0" y="212" width="240" height="80" class="d-box"/><text x="120.0" y="239.0" text-anchor="middle" class="d-tb">Excel Export</text><text x="120.0" y="259.0" text-anchor="middle" class="d-t">filters with rules</text><text x="120.0" y="277.0" text-anchor="middle" class="d-t">and overrides</text><rect x="350" y="212" width="240" height="80" class="d-box"/><text x="470.0" y="239.0" text-anchor="middle" class="d-tb">Templates</text><text x="470.0" y="259.0" text-anchor="middle" class="d-t">export / import as</text><text x="470.0" y="277.0" text-anchor="middle" class="d-t">JSON packages</text><rect x="700" y="212" width="240" height="80" class="d-box"/><text x="820.0" y="239.0" text-anchor="middle" class="d-tb">Cleanup</text><text x="820.0" y="259.0" text-anchor="middle" class="d-t">purge unused, safe</text><text x="820.0" y="277.0" text-anchor="middle" class="d-t">undo via transactions</text><path d="M350 130L242 78M470 110V90M590 130L698 78M350 170L242 222M470 190V210M590 170L698 222" class="d-tick"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-search" aria-hidden="true"></i><b>Audit is read-only</b><span>Scanning never changes the model, so it's safe on a live project.</span></div><div><i class="fa fa-undo" aria-hidden="true"></i><b>Every cleanup can be undone</b><span>Operations run in transactions and can be reversed with Ctrl+Z until the file is saved.</span></div><div><i class="fa fa-suitcase" aria-hidden="true"></i><b>Templates travel complete</b><span>Filters, overrides and rules move between projects as JSON, with pattern and line files alongside.</span></div><div><i class="fa fa-exclamation-circle" aria-hidden="true"></i><b>Handles missing parameters</b><span>If a filter needs a shared parameter the target project lacks, the tool offers to create it.</span></div><div><i class="fa fa-language" aria-hidden="true"></i><b>Two languages live</b><span>The UI switches between English and German without a restart.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

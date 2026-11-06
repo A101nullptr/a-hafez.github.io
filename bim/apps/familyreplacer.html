@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FamilyReplacer | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/familyreplacer.png" alt="">FamilyReplacer</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Swap family types across open documents, safely</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API &middot; JSON configuration</h6>
+        </div>
+        
+        <p class="app-text">Replacing a family type in several open projects means repeating the same steps in each, and groups often get in the way. FamilyReplacer lets you pick a source type in the active document and a target type in another open document, queue as many pairs as you need, and swap every matching instance. Conflicts with groups are handled, a failed document rolls back on its own, and each document gets its own log.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Replacement flow"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="164.0" height="76" class="d-box"/><text x="82.0" y="25.0" text-anchor="middle" class="d-tb">Queue pairs</text><text x="82.0" y="45.0" text-anchor="middle" class="d-t">source + target type</text><text x="82.0" y="63.0" text-anchor="middle" class="d-t">in any open document</text><rect x="194.0" y="0" width="164.0" height="76" class="d-dark"/><text x="276.0" y="25.0" text-anchor="middle" class="d-wb">Swap instances</text><text x="276.0" y="45.0" text-anchor="middle" class="d-w">every match, handling</text><text x="276.0" y="63.0" text-anchor="middle" class="d-w">group conflicts</text><path d="M164.0 38.0L192.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="388.0" y="0" width="164.0" height="76" class="d-box"/><text x="470.0" y="25.0" text-anchor="middle" class="d-tb">Rollback</text><text x="470.0" y="45.0" text-anchor="middle" class="d-t">per document,</text><text x="470.0" y="63.0" text-anchor="middle" class="d-t">if something fails</text><path d="M358.0 38.0L386.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="582.0" y="0" width="164.0" height="76" class="d-box"/><text x="664.0" y="25.0" text-anchor="middle" class="d-tb">Clean up</text><text x="664.0" y="45.0" text-anchor="middle" class="d-t">offers to delete</text><text x="664.0" y="63.0" text-anchor="middle" class="d-t">unused old families</text><path d="M552.0 38.0L580.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="776.0" y="0" width="164.0" height="76" class="d-box"/><text x="858.0" y="25.0" text-anchor="middle" class="d-tb">Log + summary</text><text x="858.0" y="45.0" text-anchor="middle" class="d-t">one log per doc,</text><text x="858.0" y="63.0" text-anchor="middle" class="d-t">link to the folder</text><path d="M746.0 38.0L774.0 38.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-shield" aria-hidden="true"></i><b>Failure stays contained</b><span>Per-document rollback means one problem model doesn't undo the others.</span></div><div><i class="fa fa-question-circle-o" aria-hidden="true"></i><b>You stay in control</b><span>Old families are only deleted after you confirm.</span></div><div><i class="fa fa-file-text-o" aria-hidden="true"></i><b>A record of every run</b><span>Logs are kept and linked from the summary, while temporary files are removed.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

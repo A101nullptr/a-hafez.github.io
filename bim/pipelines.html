@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pipelines | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../pagestyle.css">
+  <link rel="stylesheet" href="../Extra.css">
+  <link rel="stylesheet" href="./bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../favicon.ico">
+</head>
+
+<body>
+  <div class="main">
+    <a href="./index.html">
+      <h1><img src="../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="container cols3">
+      <div class="box">
+        <a href="./apps/autoifcexporter.html">
+          <div class="imgbox"><img src="./images/autoifcexporter.jpg" alt="AutoIfcExporter" width="720" height="502"></div>
+          <h3>AutoIfcExporter</h3>
+          <h4>Server Pipeline | Revit &middot; ACC &middot; SharePoint</h4>
+        </a>
+        <p class="p1">A scheduled, unattended pipeline. It indexes the models on Autodesk Construction Cloud, runs real Revit to export IFC with the project's own settings, publishes the results to SharePoint and emails a log, with no per-conversion cloud cost.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/revit2ifc.html">
+          <div class="imgbox"><img src="./images/revit2ifc.jpg" alt="Revit2IFC_CloudTranslator" width="720" height="287"></div>
+          <h3>Revit2IFC<wbr>_CloudTranslator</h3>
+          <h4>Desktop App | Python &middot; APS API</h4>
+        </a>
+        <p class="p1">A Python desktop app that converts ACC-hosted Revit files to IFC through the APS Model Derivative API, with no local Revit. Browse the hub tree, translate, download the IFCs and upload them back as new versions.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/powerbirevitbridge.html">
+          <div class="imgbox"><img src="./images/powerbirevitbridge.jpg" alt="PowerBiRevitBridge" width="720" height="428"></div>
+          <h3>PowerBi<wbr>RevitBridge</h3>
+          <h4>Integration | Power BI &middot; Revit</h4>
+        </a>
+        <p class="p1">Copy element IDs in a Power BI report and Revit selects and isolates those elements. A tray agent and a Revit add-in cooperate over the clipboard, and the add-in refuses to act if the open model doesn't match the report.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/batchprojectstandards.html">
+          <div class="imgbox"><img src="./images/batchprojectstandards.jpg" alt="BatchProjectStandards" width="720" height="529"></div>
+          <h3>BatchProject<wbr>Standards</h3>
+          <h4>Automation | Revit &middot; UI Automation</h4>
+        </a>
+        <p class="p1">Transfers project standards from one cloud model to many, syncs each with central, then emails the run log and cleans up after itself. Unattended after the first selection, driving Revit's own dialogs through UI automation.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/familyupdater.html">
+          <div class="imgbox"><img src="./images/familyupdater.jpg" alt="FamilyUpdater" width="720" height="368"></div>
+          <h3>FamilyUpdater</h3>
+          <h4>Automation | Revit &middot; Tray Watcher</h4>
+        </a>
+        <p class="p1">Rolls changed families out to Revit models. A tray app watches the family folder and records changes, and the add-in offers what changed, loads it with overwrite and keeps a record so nothing is applied twice.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/revitnavigator.html">
+          <div class="imgbox"><img src="./images/revitnavigator.svg" alt="RevitNavigator" width="480" height="270"></div>
+          <h3>RevitNavigator</h3>
+          <h4>Integration | Excel &middot; Revit</h4>
+        </a>
+        <p class="p1">Select cells of element IDs in Excel, click one button and Revit selects those elements. A VSTO Excel add-in and a Revit add-in talk through a shared file, deployed together by one installer.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="./index.html">
+        <h1><img src="../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="./navbar.js"></script>
+</body>
+
+</html>

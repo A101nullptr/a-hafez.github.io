@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FamilyUpdater | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/familyupdater.png" alt="">FamilyUpdater</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Changed families, found and loaded without hunting for them</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; shared family library</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API &middot; FileSystemWatcher &middot; system-tray app</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/JLXydT5cCas?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=JLXydT5cCas&amp;rel=0&amp;playsinline=1" title="FamilyUpdater demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">When families change in a shared library, somebody has to know which ones and load them into every project. This tool has two cooperating parts: a tray app that watches the family folder and records every change, and a Revit add-in that shows which families changed and haven't yet been applied. Select them and press Update: they are loaded with overwrite, and recorded so they don't appear again. The video also shows the rollout workflow across cloud models: tick families on the left and target models on the right, and each model is opened, updated, synchronised and reported by email.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Family update pipeline"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="164.0" height="76" class="d-box"/><text x="82.0" y="25.0" text-anchor="middle" class="d-tb">Tray watcher</text><text x="82.0" y="45.0" text-anchor="middle" class="d-t">watches .rfa folder,</text><text x="82.0" y="63.0" text-anchor="middle" class="d-t">logs each change</text><rect x="194.0" y="0" width="164.0" height="76" class="d-box"/><text x="276.0" y="25.0" text-anchor="middle" class="d-tb">Change log</text><text x="276.0" y="45.0" text-anchor="middle" class="d-t">changes_detected.txt</text><text x="276.0" y="63.0" text-anchor="middle" class="d-t">on a shared path</text><path d="M164.0 38.0L192.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="388.0" y="0" width="164.0" height="76" class="d-dark"/><text x="470.0" y="25.0" text-anchor="middle" class="d-wb">Revit add-in</text><text x="470.0" y="45.0" text-anchor="middle" class="d-w">shows what changed</text><text x="470.0" y="63.0" text-anchor="middle" class="d-w">and isn't yet applied</text><path d="M358.0 38.0L386.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="582.0" y="0" width="164.0" height="76" class="d-box"/><text x="664.0" y="25.0" text-anchor="middle" class="d-tb">Load + overwrite</text><text x="664.0" y="45.0" text-anchor="middle" class="d-t">LoadFamily with</text><text x="664.0" y="63.0" text-anchor="middle" class="d-t">overwrite options</text><path d="M552.0 38.0L580.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="776.0" y="0" width="164.0" height="76" class="d-box"/><text x="858.0" y="25.0" text-anchor="middle" class="d-tb">Applied list</text><text x="858.0" y="45.0" text-anchor="middle" class="d-t">updated_families.txt</text><text x="858.0" y="63.0" text-anchor="middle" class="d-t">prevents repeats</text><path d="M746.0 38.0L774.0 38.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-eye" aria-hidden="true"></i><b>Decoupled watcher</b><span>The watcher runs alone in the tray, so changes are captured even when Revit is closed.</span></div><div><i class="fa fa-file-text-o" aria-hidden="true"></i><b>Plain log files</b><span>A readable shared log connects the two programs, also across machines.</span></div><div><i class="fa fa-repeat" aria-hidden="true"></i><b>Idempotent</b><span>Applied families are recorded, so a family is never offered twice.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

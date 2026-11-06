@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoIfcExporter | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/autoifcexporter.png" alt="">AutoIfcExporter</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Unattended IFC export from the cloud</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; Autodesk Construction Cloud &middot; SharePoint</h5>
+          <h6>Stack | C# / .NET 4.8 &middot; Revit API &middot; APS Data Management API &middot; Microsoft Graph &middot; SharePoint CSOM &middot; Task Scheduler</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/aiPJFVxfS_s?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=aiPJFVxfS_s&amp;rel=0&amp;playsinline=1" title="AutoIfcExporter demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">A scheduled server-side pipeline. It reads which models are on Autodesk Construction Cloud, decides which ones need exporting, opens them in a real Revit instance, exports IFC, publishes the results to SharePoint and emails a log. Nobody has to be at the machine. Cloud conversion would charge Flex tokens on every scheduled run. Running the conversion in local Revit avoids that and keeps the project's own export setup, while ACC still decides which models are in scope.</p>
+        <h2>How the pipeline runs</h2>
+        <div class="diagram"><svg viewBox="0 0 940 300" role="img" aria-label="Two scheduled runs: filter models, then export IFC and publish"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><text x="0" y="16" class="d-label">RUN 1 &#183; INDEX THE MODELS</text><rect x="0" y="28" width="164" height="76" class="d-box"/><text x="82.0" y="62.0" text-anchor="middle" class="d-tb">Task Scheduler</text><text x="82.0" y="82.0" text-anchor="middle" class="d-t">starts the run</text><rect x="194" y="28" width="164" height="76" class="d-dark"/><text x="276.0" y="62.0" text-anchor="middle" class="d-wb">Setup</text><text x="276.0" y="82.0" text-anchor="middle" class="d-w">FilterMethod</text><path d="M164 66L192 66" class="d-line" marker-end="url(#arr)"/><rect x="388" y="28" width="164" height="76" class="d-box"/><text x="470.0" y="53.0" text-anchor="middle" class="d-tb">ACC / Docs</text><text x="470.0" y="73.0" text-anchor="middle" class="d-t">all Revit models</text><text x="470.0" y="91.0" text-anchor="middle" class="d-t">via Data Mgmt API</text><path d="M358 66L386 66" class="d-line" marker-end="url(#arr)"/><rect x="582" y="28" width="164" height="76" class="d-box"/><text x="664.0" y="62.0" text-anchor="middle" class="d-tb">data.json</text><text x="664.0" y="82.0" text-anchor="middle" class="d-t">selection.json</text><path d="M552 66L580 66" class="d-line" marker-end="url(#arr)"/><rect x="776" y="28" width="164" height="76" class="d-box"/><text x="858.0" y="62.0" text-anchor="middle" class="d-tb">SharePoint</text><text x="858.0" y="82.0" text-anchor="middle" class="d-t">daily data upload</text><path d="M746 66L774 66" class="d-line" marker-end="url(#arr)"/><path d="M664.0 104V136H276.0V192" class="d-flow" marker-end="url(#arrb)"/><text x="470.0" y="128" text-anchor="middle" class="d-blue">selection.json decides what run 2 exports</text><text x="0" y="180" class="d-label">RUN 2 &#183; EXPORT</text><rect x="0" y="194" width="164" height="96" class="d-box"/><text x="82.0" y="238.0" text-anchor="middle" class="d-tb">Task Scheduler</text><text x="82.0" y="258.0" text-anchor="middle" class="d-t">starts the run</text><rect x="194" y="194" width="164" height="96" class="d-dark"/><text x="276.0" y="220.0" text-anchor="middle" class="d-wb">Setup</text><text x="276.0" y="240.0" text-anchor="middle" class="d-w">SelectionMethod</text><text x="276.0" y="258.0" text-anchor="middle" class="d-w">copies add-in</text><text x="276.0" y="276.0" text-anchor="middle" class="d-w">boots Revit</text><path d="M164 242L192 242" class="d-line" marker-end="url(#arr)"/><rect x="388" y="194" width="164" height="96" class="d-dark"/><text x="470.0" y="220.0" text-anchor="middle" class="d-wb">Revit add-in</text><text x="470.0" y="240.0" text-anchor="middle" class="d-w">opens the models</text><text x="470.0" y="258.0" text-anchor="middle" class="d-w">exports IFC views</text><text x="470.0" y="276.0" text-anchor="middle" class="d-w">starts Cleanup</text><path d="M358 242L386 242" class="d-line" marker-end="url(#arr)"/><rect x="582" y="194" width="164" height="96" class="d-dark"/><text x="664.0" y="220.0" text-anchor="middle" class="d-wb">Cleanup</text><text x="664.0" y="240.0" text-anchor="middle" class="d-w">stops Revit</text><text x="664.0" y="258.0" text-anchor="middle" class="d-w">removes add-in</text><text x="664.0" y="276.0" text-anchor="middle" class="d-w">deletes temp files</text><path d="M552 242L580 242" class="d-line" marker-end="url(#arr)"/><rect x="776" y="194" width="164" height="96" class="d-box"/><text x="858.0" y="229.0" text-anchor="middle" class="d-tb">Published</text><text x="858.0" y="249.0" text-anchor="middle" class="d-t">IFCs on SharePoint</text><text x="858.0" y="267.0" text-anchor="middle" class="d-t">log by email</text><path d="M746 242L774 242" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-server" aria-hidden="true"></i><b>Local conversion, not cloud</b><span>The IFC conversion runs inside a real Revit instance instead of APS Model Derivative.</span></div><div><i class="fa fa-money" aria-hidden="true"></i><b>No per-conversion cost</b><span>Avoids Flex token charges on every scheduled run.</span></div><div><i class="fa fa-check-circle-o" aria-hidden="true"></i><b>Exact output preserved</b><span>The project's own IFC export configuration and named view selection are used as they are.</span></div><div><i class="fa fa-cubes" aria-hidden="true"></i><b>Three separate programs</b><span>Setup, the add-in and Cleanup each do one job, so Cleanup can shut down and remove the add-in that started it.</span></div></div>
+        <h2>Pipeline steps</h2>
+        <ol class="steps"><li>Task Scheduler runs <b>Setup</b>, which reads its configuration.</li><li>In <b>FilterMethod</b> mode it filters the ACC models, writes <code>data.json</code> and <code>selection.json</code>, uploads the daily data to SharePoint and exits.</li><li>In <b>SelectionMethod</b> mode it authenticates, loads <code>selection.json</code>, downloads files where needed, copies the Revit add-in and boots Revit.</li><li>The <b>add-in</b> opens the selected models, exports the IFC views and starts Cleanup.</li><li><b>Cleanup</b> terminates Revit, removes the add-in, uploads the IFC files, emails the log and deletes temporary folders.</li></ol>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exporter | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><i class="fa fa-archive app-icon-fa" aria-hidden="true"></i>Exporter</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">One Inventor document, every format, every folder</h4>
+        <div class="app-meta">
+          <h5>Platform | Autodesk Inventor</h5>
+          <h6>Stack | C# / .NET &middot; WinForms &middot; Inventor API &middot; JSON configuration</h6>
+        </div>
+        
+        <p class="app-text">Releasing a design from Inventor means exporting to many formats and project folders, with exact file names. This add-in does one run for all of it: every selected format, into every selected folder. It finds the project folder from the document's stock number, builds names from iProperties, stamps the print date and time on the document, and asks before overwriting anything.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Inventor export flow"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="212.5" height="76" class="d-dark"/><text x="106.25" y="25.0" text-anchor="middle" class="d-wb">Active document</text><text x="106.25" y="45.0" text-anchor="middle" class="d-w">part, assembly</text><text x="106.25" y="63.0" text-anchor="middle" class="d-w">or drawing</text><rect x="242.5" y="0" width="212.5" height="76" class="d-box"/><text x="348.75" y="25.0" text-anchor="middle" class="d-tb">Part / Assembly</text><text x="348.75" y="45.0" text-anchor="middle" class="d-t">DWFX, DXF, IFC,</text><text x="348.75" y="63.0" text-anchor="middle" class="d-t">RFA, STP</text><path d="M212.5 38.0L240.5 38.0" class="d-line" marker-end="url(#arr)"/><rect x="485.0" y="0" width="212.5" height="76" class="d-box"/><text x="591.25" y="25.0" text-anchor="middle" class="d-tb">Drawing</text><text x="591.25" y="45.0" text-anchor="middle" class="d-t">PDF, all sheets; DWG,</text><text x="591.25" y="63.0" text-anchor="middle" class="d-t">one file per sheet</text><path d="M455.0 38.0L483.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="727.5" y="0" width="212.5" height="76" class="d-dark"/><text x="833.75" y="25.0" text-anchor="middle" class="d-wb">Every folder</text><text x="833.75" y="45.0" text-anchor="middle" class="d-w">each format into each</text><text x="833.75" y="63.0" text-anchor="middle" class="d-w">selected folder</text><path d="M697.5 38.0L725.5 38.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>File naming</h2>
+        <div class="diagram"><svg viewBox="0 0 940 96" role="img" aria-label="File name assembled from iProperties"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="114" y="14" width="136" height="44" class="d-dark"/><text x="182.0" y="42" text-anchor="middle" class="d-wb">StockNumber</text><rect x="252" y="14" width="96" height="44" class="d-box"/><text x="300.0" y="42" text-anchor="middle" class="d-tb">-Variant</text><rect x="350" y="14" width="80" height="44" class="d-dark"/><text x="390.0" y="42" text-anchor="middle" class="d-wb">_Title</text><rect x="432" y="14" width="76" height="44" class="d-box"/><text x="470.0" y="42" text-anchor="middle" class="d-tb">sheet#</text><rect x="510" y="14" width="110" height="44" class="d-dark"/><text x="565.0" y="42" text-anchor="middle" class="d-wb">_Revision</text><rect x="622" y="14" width="90" height="44" class="d-dark"/><text x="667.0" y="42" text-anchor="middle" class="d-wb">_Status</text><rect x="714" y="14" width="110" height="44" class="d-box"/><text x="769.0" y="42" text-anchor="middle" class="d-tb">_YYYYMMDD</text><text x="470" y="84" text-anchor="middle" class="d-t">File name from iProperties. Light parts are optional.</text></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-folder-open-o" aria-hidden="true"></i><b>Finds the folder itself</b><span>Stock numbers are matched against project folders, with a clear fallback.</span></div><div><i class="fa fa-check-square-o" aria-hidden="true"></i><b>Overwrite protection</b><span>Existing files are listed in a checkbox dialog, and unchecked rows are skipped.</span></div><div><i class="fa fa-tag" aria-hidden="true"></i><b>Stamped documents</b><span>Print date and time are written to iProperties before each export.</span></div><div><i class="fa fa-cubes" aria-hidden="true"></i><b>Beyond Revit</b><span>The same ideas, applied to a different Autodesk API.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

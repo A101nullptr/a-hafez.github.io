@@ -1,30 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<title>A-HAFEZ</title>
-	<style type="text/css">@import url("./styles.css");</style>
-	<style type="text/css">@import url("../pagestyle.css");</style>
-	<style type="text/css">@import url("./Extra.css");</style>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ahmad Hafez</title>
+	<link rel="icon" href="./favicon.ico">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+	<style>
+		html, body { margin: 0; height: 100%; background: white; font-family: 'Inconsolata', Helvetica, monospace; }
+		body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+		.strip { flex: none; height: 72px; background: white; }
+		.split { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; background: #000; }
+		.side {
+			position: relative; flex: 1 1 0; min-height: 0; overflow: hidden; display: flex;
+			align-items: center; justify-content: center; color: white; text-decoration: none;
+			transition: flex-grow 0.7s;
+		}
+		.side + .side { border-top: 1px solid #000; }
+		.side video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.75s, opacity 0.75s; opacity: 0.55; }
+		.side:hover, .side:focus-visible { flex-grow: 1.35; outline: none; }
+		.side:hover video, .side:focus-visible video { transform: scale(1.05); opacity: 0.8; }
+		.side .label { position: relative; width: 100%; max-width: 430px; box-sizing: border-box; padding: 0 1em; }
+		.side h2 { margin: 0; padding: 0.35em 0.6em; font-size: 32px; font-weight: bold; text-align: center; background: #2c2c2e; }
+		footer { flex: none; height: 72px; line-height: 72px; text-align: center; font-size: 13px; color: gray; background: white; }
+		@media (max-width: 700px) {
+			.side h2 { font-size: 26px; }
+		}
+	</style>
 </head>
 
 <body>
-	<a href="./dex.html"><img id="myImage" src="./images/new2.png" alt="logo"></a>
-	<video id="myVideo" width="100%" height="100%" 
-	style="z-index:-1; position: absolute;" autoplay muted loop>
-		<source src="./Cover/Sequence 03.mp4" type="video/mp4" alt="Cover">
-	</video>
-	<script>
-		var vid = document.getElementById("myVideo").playbackRate = 1; 
-	</script>
-	<footer
-		style="  position:absolute;  top: 90%;  left: 50%; margin-right: -50%; 
-		transform: translate(-50%, -50%); text-align: center; 
-		font-family: 'Inconsolata', Helvetica; font-size:13px; color:gray;">
-		&copy; Copyright Ahmad Hafez
-	</footer>
+	<div class="strip"></div>
+	<div class="split">
+		<a class="side" href="./dex.html">
+			<video autoplay muted loop playsinline aria-hidden="true">
+				<source src="./Cover/Sequence 03.mp4" type="video/mp4">
+			</video>
+			<div class="label">
+				<h2>Architecture</h2>
+			</div>
+		</a>
+		<a class="side" href="./bim/">
+			<video autoplay muted loop playsinline aria-hidden="true" poster="./bim/images/cover.jpg">
+				<source src="./bim/videos/cover.mp4" type="video/mp4">
+			</video>
+			<div class="label">
+				<h2>BIM &amp; Software</h2>
+			</div>
+		</a>
+	</div>
+	<footer>&copy; Copyright Ahmad Hafez</footer>
 </body>
 
 </html>

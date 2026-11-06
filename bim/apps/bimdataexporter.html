@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BimDataExporter | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/bimdataexporter.png" alt="">BimDataExporter</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">A folder of Revit models, turned into structured data</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; GIS and database use</h5>
+          <h6>Stack | C# / .NET &middot; Revit API &middot; JSON &middot; GeoJSON &middot; WKT &middot; coordinate transformation</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/maysKtizw8o?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=maysKtizw8o&amp;rel=0&amp;playsinline=1" title="BimDataExporter demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">Models hold data that GIS tools, databases and web maps need, but it stays locked inside Revit files. From the active model's folder, this add-in batch-processes every .rvt into structured files, with three separate exports for different consumers. Rooms come out georeferenced: boundaries are converted from Gauss-Kr&uuml;ger to WGS84, so they land in the right place on a map.</p>
+        <h2>Three exports</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Three export commands"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="212.5" height="76" class="d-box"/><text x="106.25" y="25.0" text-anchor="middle" class="d-tb">Every .rvt</text><text x="106.25" y="45.0" text-anchor="middle" class="d-t">in the active</text><text x="106.25" y="63.0" text-anchor="middle" class="d-t">model's folder</text><rect x="242.5" y="0" width="212.5" height="76" class="d-dark"/><text x="348.75" y="25.0" text-anchor="middle" class="d-wb">Levels &amp; RefPoints</text><text x="348.75" y="45.0" text-anchor="middle" class="d-w">levels, project and survey</text><text x="348.75" y="63.0" text-anchor="middle" class="d-w">points, true north</text><path d="M212.5 38.0L240.5 38.0" class="d-line" marker-end="url(#arr)"/><rect x="485.0" y="0" width="212.5" height="76" class="d-dark"/><text x="591.25" y="25.0" text-anchor="middle" class="d-wb">JSON Rooms</text><text x="591.25" y="45.0" text-anchor="middle" class="d-w">boundaries per level,</text><text x="591.25" y="63.0" text-anchor="middle" class="d-w">WGS84 GeoJSON + WKT</text><path d="M455.0 38.0L483.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="727.5" y="0" width="212.5" height="76" class="d-dark"/><text x="833.75" y="25.0" text-anchor="middle" class="d-wb">DataBase Elements</text><text x="833.75" y="45.0" text-anchor="middle" class="d-w">every element and</text><text x="833.75" y="63.0" text-anchor="middle" class="d-w">parameter, by category</text><path d="M697.5 38.0L725.5 38.0" class="d-line" marker-end="url(#arr)"/></svg></div><div class="diagram"><svg viewBox="0 0 940 106" role="img" aria-label="Output folders"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><text x="0" y="16" text-anchor="start" class="d-label">OUTPUT FOLDERS</text><rect x="0.0" y="26" width="293.3" height="76" class="d-box"/><text x="146.65" y="51.0" text-anchor="middle" class="d-tb">Levels / Refpoints</text><text x="146.65" y="71.0" text-anchor="middle" class="d-t">Structure</text><text x="146.65" y="89.0" text-anchor="middle" class="d-t">one JSON per model</text><rect x="323.3" y="26" width="293.3" height="76" class="d-box"/><text x="469.95000000000005" y="51.0" text-anchor="middle" class="d-tb">RoomEntities</text><text x="469.95000000000005" y="71.0" text-anchor="middle" class="d-t">GeoJSON</text><text x="469.95000000000005" y="89.0" text-anchor="middle" class="d-t">FeatureCollection</text><path d="M293.3 64.0L321.3 64.0" class="d-line" marker-end="url(#arr)"/><rect x="646.7" y="26" width="293.3" height="76" class="d-box"/><text x="793.35" y="51.0" text-anchor="middle" class="d-tb">Elements</text><text x="793.35" y="71.0" text-anchor="middle" class="d-t">Location X/Y/Z</text><text x="793.35" y="89.0" text-anchor="middle" class="d-t">in metres</text><path d="M616.7 64.0L644.7 64.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-globe" aria-hidden="true"></i><b>Georeferenced rooms</b><span>Standard GeoJSON means rooms open directly in web maps and GIS tools.</span></div><div><i class="fa fa-files-o" aria-hidden="true"></i><b>Batch by design</b><span>It reads sibling .rvt files, so one click covers a whole project folder.</span></div><div><i class="fa fa-cubes" aria-hidden="true"></i><b>Separate exports</b><span>Each consumer gets only what it needs, in its own folder.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

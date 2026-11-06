@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anschlussreihenfolge | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/anschlussreihenfolge.png" alt="">Anschlussreihenfolge</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Wall junction order from rules, with room for exceptions</h4>
+        <div class="app-meta">
+          <h5>Platform | Archicad</h5>
+          <h6>Stack | C++ &middot; Archicad API &middot; CSV rule table</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/efriZtGIS4o?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=efriZtGIS4o&amp;rel=0&amp;playsinline=1" title="Anschlussreihenfolge demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">In Archicad, a wall's junction order decides how it connects to its neighbours, and setting it by hand across a project is slow and easy to get wrong. This add-on reads a CSV of rules and gives every wall the right base value from its classification, position and load-bearing function. A second command applies a per-wall modifier property, so exceptions stay deliberate and visible, and survive the next update.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 224" role="img" aria-label="Two add-on commands"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><text x="0" y="16" text-anchor="start" class="d-label">EIGENSCHAFT PRUEFEN UND STANDARDWERTE FESTLEGEN</text><rect x="0.0" y="26" width="212.5" height="76" class="d-box"/><text x="106.25" y="51.0" text-anchor="middle" class="d-tb">Every wall</text><text x="106.25" y="71.0" text-anchor="middle" class="d-t">after a Yes / No</text><text x="106.25" y="89.0" text-anchor="middle" class="d-t">warning dialog</text><rect x="242.5" y="26" width="212.5" height="76" class="d-box"/><text x="348.75" y="51.0" text-anchor="middle" class="d-tb">Read properties</text><text x="348.75" y="71.0" text-anchor="middle" class="d-t">classification, Lage,</text><text x="348.75" y="89.0" text-anchor="middle" class="d-t">Tragende Funktion</text><path d="M212.5 64.0L240.5 64.0" class="d-line" marker-end="url(#arr)"/><rect x="485.0" y="26" width="212.5" height="76" class="d-dark"/><text x="591.25" y="51.0" text-anchor="middle" class="d-wb">Look up CSV</text><text x="591.25" y="71.0" text-anchor="middle" class="d-w">finds the base</text><text x="591.25" y="89.0" text-anchor="middle" class="d-w">junction order</text><path d="M455.0 64.0L483.0 64.0" class="d-line" marker-end="url(#arr)"/><rect x="727.5" y="26" width="212.5" height="76" class="d-box"/><text x="833.75" y="51.0" text-anchor="middle" class="d-tb">Reset modifier</text><text x="833.75" y="71.0" text-anchor="middle" class="d-t">set to 0,</text><text x="833.75" y="89.0" text-anchor="middle" class="d-t">summary of changes</text><path d="M697.5 64.0L725.5 64.0" class="d-line" marker-end="url(#arr)"/><path d="M833.8 102V114H146.66666666666666V142" class="d-flow" marker-end="url(#arrb)"/><text x="158.66666666666666" y="132" text-anchor="start" class="d-label">AKTUALISIEREN</text><rect x="0.0" y="144" width="293.3" height="76" class="d-box"/><text x="146.65" y="169.0" text-anchor="middle" class="d-tb">Read modifier</text><text x="146.65" y="189.0" text-anchor="middle" class="d-t">per-wall property</text><text x="146.65" y="207.0" text-anchor="middle" class="d-t">e.g. 1 or -1</text><rect x="323.3" y="144" width="293.3" height="76" class="d-dark"/><text x="469.95000000000005" y="169.0" text-anchor="middle" class="d-wb">Recalculate</text><text x="469.95000000000005" y="189.0" text-anchor="middle" class="d-w">base + modifier</text><text x="469.95000000000005" y="207.0" text-anchor="middle" class="d-w">times 100</text><path d="M293.3 182.0L321.3 182.0" class="d-line" marker-end="url(#arr)"/><rect x="646.7" y="144" width="293.3" height="76" class="d-box"/><text x="793.35" y="169.0" text-anchor="middle" class="d-tb">Apply</text><text x="793.35" y="189.0" text-anchor="middle" class="d-t">wall takes the</text><text x="793.35" y="207.0" text-anchor="middle" class="d-t">shifted order</text><path d="M616.7 182.0L644.7 182.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>The rule</h2>
+        <div class="diagram"><svg viewBox="0 0 940 122" role="img" aria-label="Worked example of the junction order formula"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><text x="470" y="30" text-anchor="middle" class="d-tb">Junction order = base value from the CSV + modifier &#215; 100</text><rect x="140" y="48" width="200" height="66" class="d-dark"/><text x="240" y="80" text-anchor="middle" class="d-wb">4200</text><text x="240" y="100" text-anchor="middle" class="d-w">base from CSV</text><rect x="370" y="48" width="200" height="66" class="d-box"/><text x="470" y="80" text-anchor="middle" class="d-tb">+1</text><text x="470" y="100" text-anchor="middle" class="d-t">modifier on the wall</text><rect x="600" y="48" width="200" height="66" class="d-dark"/><text x="700" y="80" text-anchor="middle" class="d-wb">= 4300</text><text x="700" y="100" text-anchor="middle" class="d-w">junction order set</text></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-table" aria-hidden="true"></i><b>Rules in a CSV</b><span>Standards change without touching the C++ code.</span></div><div><i class="fa fa-pencil" aria-hidden="true"></i><b>Exceptions stay visible</b><span>A modifier property records a deliberate change rather than hiding it in the junction value.</span></div><div><i class="fa fa-cubes" aria-hidden="true"></i><b>Beyond Revit</b><span>A native Archicad add-on, written in C++ against a different API.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

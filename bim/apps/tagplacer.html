@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TagPlacer | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/tagplacer.png" alt="">TagPlacer</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Tags placed by rules, with a strategy for each element type</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API</h6>
+        </div>
+        
+        <p class="app-text">Dense plans need tags that don't collide, and the best position depends on the kind of element. TagPlacer works from a grid of rules, one per row: an element type prefix, a tag family and type, a placement strategy and leader options. Run it, and every matching element in the active view is tagged, in floor, ceiling, engineering and area plans, elevations, sections and details.</p>
+        <h2>Four placement strategies</h2>
+        <div class="diagram"><svg viewBox="0 0 940 168" role="img" aria-label="The four tag placement strategies"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><g transform="translate(0,4)"><rect width="226" height="156" class="d-box"/><text x="113" y="28" text-anchor="middle" class="d-tb">Normal</text><rect x="24" y="82" width="120" height="26" class="d-dark"/><rect x="104" y="46" width="70" height="26" class="d-accent"/><text x="113" y="140" text-anchor="middle" class="d-t">free spot near the element</text></g><g transform="translate(238,4)"><rect width="226" height="156" class="d-box"/><text x="113" y="28" text-anchor="middle" class="d-tb">Mittig</text><rect x="24" y="72" width="172" height="30" class="d-dark"/><rect x="75" y="74" width="70" height="26" class="d-accent"/><text x="113" y="140" text-anchor="middle" class="d-t">centred on the element</text></g><g transform="translate(476,4)"><rect width="226" height="156" class="d-box"/><text x="113" y="28" text-anchor="middle" class="d-tb">Paarweise</text><rect x="24" y="58" width="104" height="18" class="d-dark"/><rect x="24" y="84" width="104" height="18" class="d-dark"/><rect x="138" y="52" width="60" height="22" class="d-accent"/><rect x="138" y="80" width="60" height="22" class="d-accent"/><text x="113" y="140" text-anchor="middle" class="d-t">neighbours as a pair</text></g><g transform="translate(714,4)"><rect width="226" height="156" class="d-box"/><text x="113" y="28" text-anchor="middle" class="d-tb">Haufen</text><rect x="24" y="46" width="30" height="30" class="d-dark"/><rect x="64" y="66" width="30" height="30" class="d-dark"/><rect x="34" y="84" width="30" height="24" class="d-dark"/><rect x="130" y="44" width="66" height="18" class="d-accent"/><rect x="130" y="66" width="66" height="18" class="d-accent"/><rect x="130" y="88" width="66" height="18" class="d-accent"/><text x="113" y="140" text-anchor="middle" class="d-t">clusters stacked</text></g></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-table" aria-hidden="true"></i><b>A rule per row</b><span>Different element types can use different strategies in a single run.</span></div><div><i class="fa fa-arrows" aria-hidden="true"></i><b>Finds free space</b><span>Normal searches within 50 mm in 5 mm steps, and falls back to centred if nothing fits.</span></div><div><i class="fa fa-link" aria-hidden="true"></i><b>Geometry-based grouping</b><span>Pairs need a gap of at most 20 mm and 1&#176; of angle, and clusters are centroids within 500 mm.</span></div><div><i class="fa fa-long-arrow-right" aria-hidden="true"></i><b>Leaders that make sense</b><span>Free-end leaders on walls anchor at least 50 mm from openings.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

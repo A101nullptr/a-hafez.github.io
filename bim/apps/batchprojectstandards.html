@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BatchProjectStandards | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/batchprojectstandards.png" alt="">BatchProjectStandards</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">One source model, many targets, no one at the keyboard</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; Autodesk Construction Cloud</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API &middot; Windows UI automation &middot; SMTP</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/LD7bJLbIbwI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=LD7bJLbIbwI&amp;rel=0&amp;playsinline=1" title="BatchProjectStandards demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">Transfer Project Standards is a manual dialog in Revit, one model at a time. This tool runs it across many cloud-hosted models unattended. You pick a source model, the target models and the standards to copy, and how duplicates should be handled. It then deploys an add-in, launches Revit and works through every target: transfer, synchronise with central, next. At the end it emails a per-target log and removes everything it installed.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 224" role="img" aria-label="Batch transfer flow"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><text x="0" y="16" text-anchor="start" class="d-label">THREE PROGRAMS</text><rect x="0.0" y="26" width="293.3" height="76" class="d-box"/><text x="146.65" y="51.0" text-anchor="middle" class="d-tb">SelectionUI</text><text x="146.65" y="71.0" text-anchor="middle" class="d-t">source, targets, standards,</text><text x="146.65" y="89.0" text-anchor="middle" class="d-t">duplicate handling</text><rect x="323.3" y="26" width="293.3" height="76" class="d-dark"/><text x="469.95000000000005" y="51.0" text-anchor="middle" class="d-wb">Revit add-in</text><text x="469.95000000000005" y="71.0" text-anchor="middle" class="d-w">opens the cloud models,</text><text x="469.95000000000005" y="89.0" text-anchor="middle" class="d-w">listens to document events</text><path d="M293.3 64.0L321.3 64.0" class="d-line" marker-end="url(#arr)"/><rect x="646.7" y="26" width="293.3" height="76" class="d-dark"/><text x="793.35" y="51.0" text-anchor="middle" class="d-wb">Driver</text><text x="793.35" y="71.0" text-anchor="middle" class="d-w">runs the Revit dialogs</text><text x="793.35" y="89.0" text-anchor="middle" class="d-w">by UI automation</text><path d="M616.7 64.0L644.7 64.0" class="d-line" marker-end="url(#arr)"/><path d="M793.3 102V114H106.25V142" class="d-flow" marker-end="url(#arrb)"/><text x="118.25" y="132" text-anchor="start" class="d-label">EVERY TARGET</text><rect x="0.0" y="144" width="212.5" height="76" class="d-box"/><text x="106.25" y="169.0" text-anchor="middle" class="d-tb">Transfer</text><text x="106.25" y="189.0" text-anchor="middle" class="d-t">Project Standards</text><text x="106.25" y="207.0" text-anchor="middle" class="d-t">dialog driven</text><rect x="242.5" y="144" width="212.5" height="76" class="d-box"/><text x="348.75" y="169.0" text-anchor="middle" class="d-tb">Duplicates</text><text x="348.75" y="189.0" text-anchor="middle" class="d-t">overwrite, or</text><text x="348.75" y="207.0" text-anchor="middle" class="d-t">new types only</text><path d="M212.5 182.0L240.5 182.0" class="d-line" marker-end="url(#arr)"/><rect x="485.0" y="144" width="212.5" height="76" class="d-box"/><text x="591.25" y="169.0" text-anchor="middle" class="d-tb">Synchronise</text><text x="591.25" y="189.0" text-anchor="middle" class="d-t">with central,</text><text x="591.25" y="207.0" text-anchor="middle" class="d-t">then next model</text><path d="M455.0 182.0L483.0 182.0" class="d-line" marker-end="url(#arr)"/><rect x="727.5" y="144" width="212.5" height="76" class="d-dark"/><text x="833.75" y="169.0" text-anchor="middle" class="d-wb">Finish</text><text x="833.75" y="189.0" text-anchor="middle" class="d-w">email TransferLog,</text><text x="833.75" y="207.0" text-anchor="middle" class="d-w">remove add-in + temp</text><path d="M697.5 182.0L725.5 182.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-hand-pointer-o" aria-hidden="true"></i><b>Automating what has no API</b><span>Transfer Project Standards isn't exposed in the Revit API, so a separate driver operates the real dialog.</span></div><div><i class="fa fa-bolt" aria-hidden="true"></i><b>Event-driven</b><span>The add-in reacts to DocumentChanged and DocumentSynchronizedWithCentral instead of guessing with timers.</span></div><div><i class="fa fa-sliders" aria-hidden="true"></i><b>Config over rebuild</b><span>The folder tree, cloud GUIDs, recipients and parameter list live in one config file.</span></div><div><i class="fa fa-envelope-o" aria-hidden="true"></i><b>Proof of every run</b><span>Each target's checklist and a summary are emailed as TransferLog.log.</span></div><div><i class="fa fa-lock" aria-hidden="true"></i><b>Protected while running</b><span>User input is blocked during the run, so a stray click can't break the sequence.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

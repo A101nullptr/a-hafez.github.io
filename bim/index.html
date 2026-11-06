@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmad Hafez | BIM & Software</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../pagestyle.css">
+  <link rel="stylesheet" href="../Extra.css">
+  <link rel="stylesheet" href="./bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../favicon.ico">
+  <script>
+    function loading() {
+      setTimeout(function () {
+        document.getElementById('loading_screen').style.display = 'none';
+        document.getElementById('content_page').style.display = 'block';
+      }, 2000);
+    }
+  </script>
+</head>
+
+<body onload="loading()">
+  <div id="loading_screen"></div>
+  <div id="content_page" style="display:none;">
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="container">
+      <div class="box">
+        <a href="./apps/autoifcexporter.html">
+          <div class="imgbox"><img src="./images/autoifcexporter.jpg" alt="AutoIfcExporter" width="720" height="502"></div>
+          <h3>AutoIfcExporter</h3>
+          <h4>Server Pipeline | Revit &middot; ACC &middot; SharePoint</h4>
+        </a>
+        <p class="p1">A scheduled, unattended pipeline. It indexes the models on Autodesk Construction Cloud, runs real Revit to export IFC with the project's own settings, publishes the results to SharePoint and emails a log, with no per-conversion cloud cost.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/idvergabe.html">
+          <div class="imgbox"><img src="./images/idvergabe.jpg" alt="IdVergabe" width="720" height="337"></div>
+          <h3>IdVergabe</h3>
+          <h4>Revit Add-in | Parameters &middot; SQL Server</h4>
+        </a>
+        <p class="p1">Assigns 20 identification parameters to every element in a model. Spatial containers, hierarchy rules and a SQL Server master-data database drive the values, replacing manual numbering of element, unit, floor, room and assembly IDs.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/revit2ifc.html">
+          <div class="imgbox"><img src="./images/revit2ifc.jpg" alt="Revit2IFC_CloudTranslator" width="720" height="287"></div>
+          <h3>Revit2IFC<wbr>_CloudTranslator</h3>
+          <h4>Desktop App | Python &middot; APS API</h4>
+        </a>
+        <p class="p1">A Python desktop app that converts ACC-hosted Revit files to IFC through the APS Model Derivative API, with no local Revit. Browse the hub tree, translate, download the IFCs and upload them back as new versions.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/powerbirevitbridge.html">
+          <div class="imgbox"><img src="./images/powerbirevitbridge.jpg" alt="PowerBiRevitBridge" width="720" height="428"></div>
+          <h3>PowerBi<wbr>RevitBridge</h3>
+          <h4>Integration | Power BI &middot; Revit</h4>
+        </a>
+        <p class="p1">Copy element IDs in a Power BI report and Revit selects and isolates those elements. A tray agent and a Revit add-in cooperate over the clipboard, and the add-in refuses to act if the open model doesn't match the report.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/schalungskegel.html">
+          <div class="imgbox"><img src="./images/schalungskegel.jpg" alt="Schalungskegel" width="720" height="406"></div>
+          <h3>Schalungskegel</h3>
+          <h4>Revit Add-in | Rule-based Placement</h4>
+        </a>
+        <p class="p1">Places formwork cones in timber-concrete composite ceilings. It finds the edges resting on walls, offsets them into a path, splits the path by structural spacing rules and places the right family type at every point.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/viewfilter.html">
+          <div class="imgbox"><img src="./images/viewfilter.jpg" alt="ViewFilter" width="720" height="487"></div>
+          <h3>ViewFilter</h3>
+          <h4>Revit Add-in | Visibility &middot; Audit</h4>
+        </a>
+        <p class="p1">One window for every view-filter task: copy filters and V/G overrides between views and templates, audit for unused or duplicate filters, move templates between projects as JSON, purge what's left. German and English UI.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/batchprojectstandards.html">
+          <div class="imgbox"><img src="./images/batchprojectstandards.jpg" alt="BatchProjectStandards" width="720" height="529"></div>
+          <h3>BatchProject<wbr>Standards</h3>
+          <h4>Automation | Revit &middot; UI Automation</h4>
+        </a>
+        <p class="p1">Transfers project standards from one cloud model to many, syncs each with central, then emails the run log and cleans up after itself. Unattended after the first selection, driving Revit's own dialogs through UI automation.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/familyupdater.html">
+          <div class="imgbox"><img src="./images/familyupdater.jpg" alt="FamilyUpdater" width="720" height="368"></div>
+          <h3>FamilyUpdater</h3>
+          <h4>Automation | Revit &middot; Tray Watcher</h4>
+        </a>
+        <p class="p1">Rolls changed families out to Revit models. A tray app watches the family folder and records changes, and the add-in offers what changed, loads it with overwrite and keeps a record so nothing is applied twice.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/schubverbinder.html">
+          <div class="imgbox"><img src="./images/schubverbinder.jpg" alt="Schubverbinder" width="720" height="406"></div>
+          <h3>Schubverbinder</h3>
+          <h4>Revit Add-in | Rule-based Placement</h4>
+        </a>
+        <p class="p1">Places mirrored shear-connector pairs along the joints between neighbouring ceiling elements. Offsets depend on joint length and ceiling type, and each pair then slides to keep clear of the formwork cones already placed.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/kranabstand.html">
+          <div class="imgbox"><img src="./images/kranabstand.jpg" alt="KranAbstand" width="720" height="405"></div>
+          <h3>KranAbstand</h3>
+          <h4>Revit Add-in | Measure</h4>
+        </a>
+        <p class="p1">Measures the distance from every element to every crane and writes the result into a parameter as JSON, so lifting and crane-capacity checks can read it directly from the model.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/planexporter.html">
+          <div class="imgbox"><img src="./images/planexporter.jpg" alt="PlanExporter" width="720" height="406"></div>
+          <h3>PlanExporter</h3>
+          <h4>Revit Add-in | Export</h4>
+        </a>
+        <p class="p1">Exports sheets from a tree view to PDF and DWG, as single files or one combined document, with optional QR codes. Naming rules build each file name from project, sheet or view parameters. The model stays unedited.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/bimdataexporter.html">
+          <div class="imgbox"><img src="./images/bimdataexporter.jpg" alt="BimDataExporter" width="666" height="367"></div>
+          <h3>BimDataExporter</h3>
+          <h4>Revit Add-in | Export &middot; GeoJSON</h4>
+        </a>
+        <p class="p1">Batch-processes every Revit file in a folder into structured JSON: levels and reference points, georeferenced room boundaries as GeoJSON and WKT, and every element with all its parameters, for GIS and database use.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/roomnumbering.html">
+          <div class="imgbox"><img src="./images/roomnumbering.jpg" alt="RoomNumbering" width="720" height="417"></div>
+          <h3>RoomNumbering</h3>
+          <h4>Revit Add-in | Numbering</h4>
+        </a>
+        <p class="p1">Numbers the rooms of each unit by their angle around a start room, clockwise or counter-clockwise from a chosen base angle. Runs for one unit on one level, or for all units on all levels at once.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/wallchecker.html">
+          <div class="imgbox"><img src="./images/wallchecker.jpg" alt="WallChecker" width="720" height="376"></div>
+          <h3>WallChecker</h3>
+          <h4>Revit Add-in | Audit</h4>
+        </a>
+        <p class="p1">Audits the geometric precision of walls: length, end-point coordinates and angle must each be an exact multiple of a chosen step. Failing walls are listed, and one click zooms straight to each.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/centerofgravity.html">
+          <div class="imgbox"><img src="./images/centerofgravity.jpg" alt="CenterOfGravity" width="720" height="405"></div>
+          <h3>CenterOfGravity</h3>
+          <h4>Revit Add-in | Measure</h4>
+        </a>
+        <p class="p1">Computes the true volume-weighted centroid of selected elements from their solid geometry rather than the bounding box, places a marker there and shows live values in a modeless window that follows the selection.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/anschlussreihenfolge.html">
+          <div class="imgbox"><img src="./images/anschlussreihenfolge.jpg" alt="Anschlussreihenfolge" width="720" height="405"></div>
+          <h3>Anschluss<wbr>reihenfolge</h3>
+          <h4>Archicad Add-on | C++</h4>
+        </a>
+        <p class="p1">Sets the junction order of every wall in an Archicad project from a CSV of rules by classification, position and load-bearing function, with a per-wall modifier property for exceptions.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/elementtypedimensionchecker.html">
+          <div class="imgbox"><img src="./images/elementtypedimensionchecker.jpg" alt="ElementTypeDimensionChecker" width="720" height="515"></div>
+          <h3>ElementType<wbr>Dimension<wbr>Checker</h3>
+          <h4>Revit Add-in | Audit &middot; Excel</h4>
+        </a>
+        <p class="p1">Checks wall dimensions against a target catalogue in Excel. Every deviation is listed with the wrong dimension and its target value, and one click zooms to the wall in the model.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/xmlexport.html">
+          <div class="imgbox"><img src="./images/xmlexport.jpg" alt="XMLExport" width="666" height="517"></div>
+          <h3>XMLExport</h3>
+          <h4>Revit Add-in | Export</h4>
+        </a>
+        <p class="p1">Writes a project's whole data structure to one XML file: project information, parameter definitions, view-filter rules and every element with its values, ready for Excel, Tableau or SQL.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/linktagger.html">
+          <div class="imgbox"><img src="./images/linktagger.jpg" alt="LinkTagger" width="720" height="405"></div>
+          <h3>LinkTagger</h3>
+          <h4>Revit Add-in | Annotation</h4>
+        </a>
+        <p class="p1">Tags elements inside linked models, which Revit makes tedious by hand. Filter by element type, pick a tag family and type, and every match in the active view is tagged, with an optional grid layout.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/wallsidevisualizer.html">
+          <div class="imgbox"><img src="./images/wallsidevisualizer.jpg" alt="WallSideVisualizer" width="720" height="444"></div>
+          <h3>WallSide<wbr>Visualizer</h3>
+          <h4>Revit Add-in | Annotation</h4>
+        </a>
+        <p class="p1">Annotates every wall in a floor plan with its location line, the direction it was drawn in and its finished face side, collected in one detail group so you can see which side of a prefabricated wall goes on the conveyor belt.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/aussenwinkel.html">
+          <div class="imgbox"><img src="./images/aussenwinkel.svg" alt="Außenwinkel" width="480" height="270"></div>
+          <h3>Au&szlig;enwinkel</h3>
+          <h4>Revit Add-in | Rule-based Placement</h4>
+        </a>
+        <p class="p1">Places corner brackets along exterior wall faces. It works out each wall's inward side by ray casting, then adds positions at wall ends, columns and windows, and fills the gaps up to a 1250 mm maximum.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/tagplacer.html">
+          <div class="imgbox"><img src="./images/tagplacer.svg" alt="TagPlacer" width="480" height="270"></div>
+          <h3>TagPlacer</h3>
+          <h4>Revit Add-in | Annotation</h4>
+        </a>
+        <p class="p1">Tags elements in the active view by rules, one per row: type prefix, tag family and placement strategy. Strategies search for free space, centre the tag, pair neighbours or stack clusters.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/familyreplacer.html">
+          <div class="imgbox"><img src="./images/familyreplacer.svg" alt="FamilyReplacer" width="480" height="270"></div>
+          <h3>FamilyReplacer</h3>
+          <h4>Revit Add-in | Families</h4>
+        </a>
+        <p class="p1">Swaps family types across open documents with group-conflict handling and per-document rollback, offers to delete families left without instances, and writes a log for each document.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/paramflow.html">
+          <div class="imgbox"><img src="./images/paramflow.svg" alt="ParamFlow" width="480" height="270"></div>
+          <h3>ParamFlow</h3>
+          <h4>Revit Add-in | Parameters</h4>
+        </a>
+        <p class="p1">Batch-copies one parameter into another, optionally through a small string pipeline of Substring, Split and Add modules that run in order, for a whole category or a single element.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/revitnavigator.html">
+          <div class="imgbox"><img src="./images/revitnavigator.svg" alt="RevitNavigator" width="480" height="270"></div>
+          <h3>RevitNavigator</h3>
+          <h4>Integration | Excel &middot; Revit</h4>
+        </a>
+        <p class="p1">Select cells of element IDs in Excel, click one button and Revit selects those elements. A VSTO Excel add-in and a Revit add-in talk through a shared file, deployed together by one installer.</p>
+      </div>
+      <div class="box">
+        <a href="./apps/inventorexporter.html">
+          <div class="imgbox"><img src="./images/inventorexporter.svg" alt="Exporter" width="480" height="270"></div>
+          <h3>Exporter</h3>
+          <h4>Inventor Add-in | Export</h4>
+        </a>
+        <p class="p1">Exports the active part, assembly or drawing to several formats and folders in one run. It finds the project folder from the stock number, builds names from iProperties and protects existing files.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  </div>
+  <script src="./navbar.js"></script>
+</body>
+
+</html>

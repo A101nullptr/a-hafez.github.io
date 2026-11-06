@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schubverbinder | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/schubverbinder.png" alt="">Schubverbinder</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Shear connectors placed by rules, clear of the formwork</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; timber-concrete composite (HBV) ceilings</h5>
+          <h6>Stack | C# / .NET &middot; Revit API &middot; solid geometry &middot; single-transaction placement</h6>
+        </div>
+        <img class="app-video" src="../images/schubverbinder.jpg" alt="Schubverbinder">
+        <p class="app-text">Neighbouring timber-concrete ceiling elements are tied together by shear connectors. This add-in finds every joint between K-DH ceilings from their geometry, then places mirrored connector pairs along each one. How many, and how far from the ends, depends on the joint's length and the ceiling type. Pairs then shift to keep at least 300 mm from any formwork cone already in the model, or fall back to the midpoint between two cones.</p>
+        <h2>The placement rules</h2>
+        <div class="diagram"><svg viewBox="0 0 940 262" role="img" aria-label="Two ceiling elements with mirrored connector pairs along their joint"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="20" y="20" width="900" height="112" class="d-box"/><rect x="20" y="138" width="900" height="112" class="d-box"/><text x="40" y="50" text-anchor="start" class="d-tb">Ceiling element A</text><text x="40" y="240" text-anchor="start" class="d-tb">Ceiling element B</text><path d="M20 135H920" class="d-line" stroke-dasharray="8 5"/><text x="470" y="124" text-anchor="middle" class="d-t">joint: parallel edges, overlap at least 700 mm, gap at most 60 mm</text><rect x="157" y="96" width="26" height="30" class="d-accent"/><rect x="157" y="144" width="26" height="30" class="d-accent"/><text x="170" y="86" text-anchor="middle" class="d-blue">A</text><text x="170" y="192" text-anchor="middle" class="d-blue">B</text><rect x="757" y="96" width="26" height="30" class="d-accent"/><rect x="757" y="144" width="26" height="30" class="d-accent"/><text x="770" y="86" text-anchor="middle" class="d-blue">A</text><text x="770" y="192" text-anchor="middle" class="d-blue">B</text><path d="M20 208V224M170 208V224M20 216H170M770 208V224M920 208V224M770 216H920" class="d-tick"/><text x="95" y="210" text-anchor="middle" class="d-t">offset</text><text x="845" y="210" text-anchor="middle" class="d-t">offset</text></svg></div><table class="rules"><tr><th>Joint</th><th>Connectors</th><th>Offset from each end</th></tr><tr><td>Long edge, K-DH-01-00002 / 00003</td><td>2 pairs</td><td>780 mm</td></tr><tr><td>Long edge, K-DH-01-00005</td><td>2 pairs</td><td>1190 mm</td></tr><tr><td>Long edge, K-DH-01-00004</td><td>2 pairs</td><td>1430 mm</td></tr><tr><td>Short edge, under 1200 mm</td><td>1 pair</td><td>centred</td></tr><tr><td>Short edge, 1200 mm or more</td><td>2 pairs</td><td>350 mm</td></tr></table>
+        <h2>From geometry to placement</h2>
+        <ol class="steps"><li><b>Find joints:</b> compare K-DH ceilings for parallel edges overlapping at least 700 mm and no more than 60 mm apart.</li><li><b>Pick the rule:</b> classify the edge as long or short, and read the offset from the ceiling subtype.</li><li><b>Place mirrored pairs:</b> one connector on each side of the joint.</li><li><b>Avoid the cones:</b> slide pairs outward to keep 300 mm from existing Schalungskegel, or use the midpoint between two cones about 600 mm apart.</li><li><b>Group:</b> collect everything under one group, in a single transaction that Ctrl+Z can undo.</li></ol>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-object-group" aria-hidden="true"></i><b>Works with Schalungskegel</b><span>It reads the cones the sister add-in placed, so the two rule sets don't collide.</span></div><div><i class="fa fa-shield" aria-hidden="true"></i><b>Checks before it acts</b><span>Ceilings over 14 faces are rejected, and workshared projects must own the ceilings first.</span></div><div><i class="fa fa-undo" aria-hidden="true"></i><b>All or nothing</b><span>A single transaction keeps the model clean if anything goes wrong.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

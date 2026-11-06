@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revit2IFC_CloudTranslator | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/revit2ifc.png" alt="">Revit2IFC_CloudTranslator</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Revit to IFC in the cloud, with no Revit installed</h4>
+        <div class="app-meta">
+          <h5>Platform | Autodesk Construction Cloud &middot; APS Model Derivative API</h5>
+          <h6>Stack | Python &middot; requests &middot; Tkinter &middot; Autodesk APS REST APIs</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/7akbATL_Q9I?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=7akbATL_Q9I&amp;rel=0&amp;playsinline=1" title="Revit2IFC_CloudTranslator demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">A small desktop app for converting Revit models hosted on Autodesk Construction Cloud to IFC without opening Revit. You log in with your APS credentials, tick models in a tree of the whole hub, choose an output folder and translate. The app polls each cloud job until it finishes, downloads the IFC files, removes older files with the same name in the target folder, then uploads the new ones as finished versions.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Translation flow"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="164.0" height="76" class="d-box"/><text x="82.0" y="25.0" text-anchor="middle" class="d-tb">Authenticate</text><text x="82.0" y="45.0" text-anchor="middle" class="d-t">APS client</text><text x="82.0" y="63.0" text-anchor="middle" class="d-t">credentials</text><rect x="194.0" y="0" width="164.0" height="76" class="d-box"/><text x="276.0" y="25.0" text-anchor="middle" class="d-tb">Browse ACC</text><text x="276.0" y="45.0" text-anchor="middle" class="d-t">hub, project, folder</text><text x="276.0" y="63.0" text-anchor="middle" class="d-t">tree, 6 levels deep</text><path d="M164.0 38.0L192.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="388.0" y="0" width="164.0" height="76" class="d-dark"/><text x="470.0" y="25.0" text-anchor="middle" class="d-wb">Translate</text><text x="470.0" y="45.0" text-anchor="middle" class="d-w">Model Derivative job,</text><text x="470.0" y="63.0" text-anchor="middle" class="d-w">polled until done</text><path d="M358.0 38.0L386.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="582.0" y="0" width="164.0" height="76" class="d-box"/><text x="664.0" y="25.0" text-anchor="middle" class="d-tb">Download</text><text x="664.0" y="45.0" text-anchor="middle" class="d-t">IFC files to a</text><text x="664.0" y="63.0" text-anchor="middle" class="d-t">local temp folder</text><path d="M552.0 38.0L580.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="776.0" y="0" width="164.0" height="76" class="d-dark"/><text x="858.0" y="25.0" text-anchor="middle" class="d-wb">Re-upload</text><text x="858.0" y="45.0" text-anchor="middle" class="d-w">replaces same-name</text><text x="858.0" y="63.0" text-anchor="middle" class="d-w">IFCs as new version</text><path d="M746.0 38.0L774.0 38.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>The interface</h2>
+        <img class="doc-img" src="../images/doc_revit2ifc.jpg" alt="Login window and project tree of the app"><p class="doc-cap">Login with APS client credentials, then a cascading checklist of the whole document tree. Names shown are placeholders.</p>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-cloud" aria-hidden="true"></i><b>No local Revit</b><span>Conversion runs entirely in the cloud, so any machine can run it.</span></div><div><i class="fa fa-check-square-o" aria-hidden="true"></i><b>Cascading selection</b><span>Ticking a folder ticks everything inside, with a live file counter.</span></div><div><i class="fa fa-clock-o" aria-hidden="true"></i><b>Token awareness</b><span>A 60-minute countdown shows when the access token expires.</span></div><div><i class="fa fa-exchange" aria-hidden="true"></i><b>Compared with AutoIfcExporter</b><span>This trades per-conversion cloud cost for needing no Revit licence or server.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

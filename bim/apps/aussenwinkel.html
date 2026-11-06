@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Au&szlig;enwinkel | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/aussenwinkel.png" alt="">Au&szlig;enwinkel</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Corner brackets, placed from the geometry of each wall</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; Revit API &middot; ray casting &middot; geometry</h6>
+        </div>
+        
+        <p class="app-text">Exterior core walls need corner brackets along their length, positioned around columns and windows and never further apart than a set maximum. This add-in works out which side of each wall faces inward, at any angle, and builds the bracket positions from rules: fixed starts at the wall ends, positions at column and window edges, then an even fill of the gaps. All placed brackets are grouped, and the processed walls are isolated in the view for checking.</p>
+        <h2>The placement rules</h2>
+        <div class="diagram"><svg viewBox="0 0 940 312" role="img" aria-label="Exterior wall with window and brackets, showing spacing rules"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="30" y="150" width="880" height="44" class="d-dark"/><rect x="390" y="150" width="160" height="44" fill="white" stroke="#2c2c2e"/><text x="120" y="177" text-anchor="start" class="d-wb">exterior wall</text><text x="470" y="177" text-anchor="middle" class="d-tb">window</text><path d="M100 144V112H122" fill="none" stroke="#0696D7" stroke-width="5"/><path d="M245 144V112H267" fill="none" stroke="#0696D7" stroke-width="5"/><path d="M390 144V112H412" fill="none" stroke="#0696D7" stroke-width="5"/><path d="M550 144V112H572" fill="none" stroke="#0696D7" stroke-width="5"/><path d="M690 144V112H712" fill="none" stroke="#0696D7" stroke-width="5"/><path d="M840 144V112H862" fill="none" stroke="#0696D7" stroke-width="5"/><path d="M30 92V104M100 92V104M30 98H100M550 92V104M690 92V104M550 98H690" class="d-tick"/><text x="65" y="86" text-anchor="middle" class="d-t">350</text><text x="620" y="86" text-anchor="middle" class="d-t">max. 1250</text><path d="M470 240V200" class="d-flow" marker-end="url(#arrb)"/><path d="M470 240V280" class="d-flow"/><text x="470" y="300" text-anchor="middle" class="d-blue">rays cast both ways against neighbouring walls decide which side is inside</text><text x="470" y="40" text-anchor="middle" class="d-tb">Corner brackets on the inner side of the wall (dimensions in mm)</text></svg></div>
+        <h2>From geometry to placement</h2>
+        <ol class="steps"><li><b>Inward normal:</b> cast a 2D ray to both sides of each wall against its neighbours on the same level. Hit count and distance decide which side is inside. Isolated walls fall back to the building centroid.</li><li><b>Placement line:</b> offset the centerline inward by half the wall thickness, plus a level-dependent offset.</li><li><b>Trim:</b> shorten the line at every intersecting wall on the same level.</li><li><b>Seed positions:</b> 350 mm from both ends, 60 mm plus half the cross-section at columns, and half the opening width either side of windows.</li><li><b>Fill:</b> subdivide gaps longer than 1250 mm, then sort and de-duplicate.</li><li><b>Place:</b> one bracket at every position, rotated to face inward.</li></ol>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-compass" aria-hidden="true"></i><b>Any wall angle</b><span>Ray casting finds the inside without assuming walls are orthogonal.</span></div><div><i class="fa fa-check-circle-o" aria-hidden="true"></i><b>Built for checking</b><span>Grouped output and isolated walls make the result quick to review.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

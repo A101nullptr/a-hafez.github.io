@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkTagger | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/linktagger.png" alt="">LinkTagger</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Tags for elements inside linked models</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; linked models</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API</h6>
+        </div>
+        <img class="app-video" src="../images/linktagger.jpg" alt="LinkTagger">
+        <p class="app-text">Tagging elements that live in linked models is slow in Revit, one at a time. LinkTagger searches every linked model for walls, generic models and structural framing, filters by the ElementTyp parameter, and tags every match in the active plan view with the family and type you choose. An optional grid layout then tidies the result, and tags whose leader no longer reaches its host are highlighted.</p>
+        <h2>How it works</h2>
+        <div class="diagram"><svg viewBox="0 0 940 80" role="img" aria-label="Tagging flow"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0.0" y="0" width="164.0" height="76" class="d-box"/><text x="82.0" y="25.0" text-anchor="middle" class="d-tb">Scan links</text><text x="82.0" y="45.0" text-anchor="middle" class="d-t">walls, generic models</text><text x="82.0" y="63.0" text-anchor="middle" class="d-t">structural framing</text><rect x="194.0" y="0" width="164.0" height="76" class="d-box"/><text x="276.0" y="25.0" text-anchor="middle" class="d-tb">Filter</text><text x="276.0" y="45.0" text-anchor="middle" class="d-t">ElementTyp text,</text><text x="276.0" y="63.0" text-anchor="middle" class="d-t">e.g. K-DH</text><path d="M164.0 38.0L192.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="388.0" y="0" width="164.0" height="76" class="d-dark"/><text x="470.0" y="25.0" text-anchor="middle" class="d-wb">Tag</text><text x="470.0" y="45.0" text-anchor="middle" class="d-w">chosen tag family and</text><text x="470.0" y="63.0" text-anchor="middle" class="d-w">type, active plan</text><path d="M358.0 38.0L386.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="582.0" y="0" width="164.0" height="76" class="d-box"/><text x="664.0" y="25.0" text-anchor="middle" class="d-tb">Grid layout</text><text x="664.0" y="45.0" text-anchor="middle" class="d-t">optional: tags sorted</text><text x="664.0" y="63.0" text-anchor="middle" class="d-t">into free cells</text><path d="M552.0 38.0L580.0 38.0" class="d-line" marker-end="url(#arr)"/><rect x="776.0" y="0" width="164.0" height="76" class="d-box"/><text x="858.0" y="25.0" text-anchor="middle" class="d-tb">Check + clean</text><text x="858.0" y="45.0" text-anchor="middle" class="d-t">flag detached tags,</text><text x="858.0" y="63.0" text-anchor="middle" class="d-t">remove temp lines</text><path d="M746.0 38.0L774.0 38.0" class="d-line" marker-end="url(#arr)"/></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-link" aria-hidden="true"></i><b>Reaches into links</b><span>It tags through to elements in other models, in floor and ceiling plans.</span></div><div><i class="fa fa-th" aria-hidden="true"></i><b>Readable output</b><span>A temporary grid sorts tags by position, moves each to a free cell and straightens leaders.</span></div><div><i class="fa fa-eraser" aria-hidden="true"></i><b>Clean afterwards</b><span>Grid and detail lines are removed at the end, unless you choose to keep the grid.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CenterOfGravity | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/centerofgravity.png" alt="">CenterOfGravity</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">The real centre of an element, from its actual geometry</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; WinForms &middot; Revit API &middot; solid tessellation</h6>
+        </div>
+        <div class="app-video"><iframe src="https://www.youtube-nocookie.com/embed/s-DenOWTmEA?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=s-DenOWTmEA&amp;rel=0&amp;playsinline=1" title="CenterOfGravity demo video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="app-text">Lifting and transport planning needs an element's true centre of gravity, and a bounding-box centre gets that wrong for any irregular shape. This add-in tessellates the solid to calculate the volume-weighted centroid of each selected element, then places a marker there. A modeless window shows the ID, family, volume and X, Y, Z in project units, and steps through several selected elements. On close, it asks whether to delete the markers.</p>
+        <h2>Why the geometry matters</h2>
+        <div class="diagram"><svg viewBox="0 0 940 258" role="img" aria-label="L-shaped element comparing centroid and bounding-box centre"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0" y="4" width="940" height="248" class="d-box"/><path d="M90 40H330V120H210V220H90Z" fill="#0696D7" fill-opacity=".22" stroke="#0677ab" stroke-width="2"/><path d="M90 40H330V220H90Z" class="d-tick" stroke-dasharray="6 5"/><circle cx="210" cy="130" r="7" fill="none" stroke="#666" stroke-width="2"/><circle cx="187" cy="115" r="8" class="d-accent"/><path d="M222 133L350 160" class="d-tick"/><path d="M196 111L350 80" class="d-tick"/><text x="358" y="86" text-anchor="start" class="d-blue">True volume-weighted centroid: computed from the solid</text><text x="358" y="108" text-anchor="start" class="d-blue">geometry, and marked in the model</text><text x="358" y="165" text-anchor="start" class="d-t">Bounding-box centre: the quick answer, wrong for any</text><text x="358" y="187" text-anchor="start" class="d-t">shape that isn't a plain block</text></svg></div>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-cube" aria-hidden="true"></i><b>Real solids</b><span>Tessellating the geometry gives the true centroid for irregular elements.</span></div><div><i class="fa fa-window-restore" aria-hidden="true"></i><b>Modeless window</b><span>You keep working in Revit, and the values follow your selection.</span></div><div><i class="fa fa-map-marker" aria-hidden="true"></i><b>Marker with data</b><span>The coordinates are written into the marker family, so they stay in the model.</span></div><div><i class="fa fa-trash-o" aria-hidden="true"></i><b>Leaves no mess</b><span>Clear removes all markers, and closing offers to as well.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

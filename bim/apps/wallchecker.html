@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WallChecker | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/wallchecker.png" alt="">WallChecker</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">Finds the walls that are almost right</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API</h6>
+        </div>
+        <img class="app-video" src="../images/wallchecker.jpg" alt="WallChecker">
+        <p class="app-text">A wall that's a fraction of a millimetre off grid causes problems later, in joins, dimensions and prefabrication data, and it's almost invisible in a drawing. WallChecker audits every wall's length, end-point coordinates and angle, which must each be an exact multiple of a chosen step. Failing walls are listed, and one click zooms straight to each.</p>
+        <h2>Why a wall gets flagged</h2>
+        <div class="diagram"><svg viewBox="0 0 940 200" role="img" aria-label="Worked example of the length check"><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#2c2c2e"/></marker><marker id="arrb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0696D7"/></marker></defs><rect x="0" y="4" width="440" height="190" class="d-box"/><rect x="24" y="66" width="392" height="30" class="d-accent"/><text x="220" y="56" text-anchor="middle" class="d-tb">Wall length = 7225.8 mm</text><path d="M24 112V128M416 112V128M24 120H416" class="d-tick"/><text x="220" y="150" text-anchor="middle" class="d-t">must be an exact multiple of the chosen step</text><text x="220" y="172" text-anchor="middle" class="d-t">(0.5 mm here)</text><rect x="470" y="4" width="470" height="190" class="d-dark"/><text x="494" y="44" text-anchor="start" class="d-wb">7225.8 / 0.5 = 14451.6</text><text x="494" y="76" text-anchor="start" class="d-w">Not a whole number, so the wall is flagged</text><text x="494" y="118" text-anchor="start" class="d-w">Same test on: end-point X and Y coordinates</text><text x="494" y="142" text-anchor="start" class="d-w">and the wall's angle (90&#176;, 45&#176; or custom)</text><text x="494" y="174" text-anchor="start" class="d-w">Example from the video</text></svg></div>
+        <h2>Three checks</h2>
+        <div class="points"><div><i class="fa fa-arrows-h" aria-hidden="true"></i><b>Length</b><span>A multiple of 0.5 mm, 0.25 mm or a custom value.</span></div><div><i class="fa fa-crosshairs" aria-hidden="true"></i><b>Position</b><span>Start and end coordinates, against the same tolerance.</span></div><div><i class="fa fa-repeat" aria-hidden="true"></i><b>Orientation</b><span>A multiple of 90&#176;, 45&#176; or a custom angle, with an optional offset.</span></div><div><i class="fa fa-list" aria-hidden="true"></i><b>Element list</b><span>Failing walls can be selected and fixed directly while the window stays open.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>

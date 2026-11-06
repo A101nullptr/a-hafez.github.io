@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XMLExport | Ahmad Hafez</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../../pagestyle.css">
+  <link rel="stylesheet" href="../../Extra.css">
+  <link rel="stylesheet" href="../bim.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700">
+  <link rel="icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <a href="../index.html">
+      <h1><img src="../../images/new.png" alt="Ahmad Hafez logo"></h1>
+    </a>
+
+    <div class="nvbar"></div>
+
+    <hr>
+
+    <div class="odd_container">
+      <div class="st_img_styl look">
+        <h3 class="app-title" style="cursor: default; padding-bottom: 10px; background: #2c2c2e; color: white; font-size: 35px; text-align: center; margin-top: 16px;"><img class="app-icon" src="../icons/xmlexport.png" alt="">XMLExport</h3>
+        <h4 style="cursor: default; text-align: center; padding: 0 0 10px; font-size: 20px; background: #2c2c2e; color: white; margin-block-end: 0; margin-top: 0;">A whole project's data structure, in one readable file</h4>
+        <div class="app-meta">
+          <h5>Platform | Revit &middot; Excel, Tableau, SQL</h5>
+          <h6>Stack | C# / .NET &middot; WPF &middot; Revit API &middot; .NET reflection &middot; XML</h6>
+        </div>
+        <img class="app-video" src="../images/xmlexport.jpg" alt="XMLExport">
+        <p class="app-text">Sometimes you need to see everything a model contains, to document it, compare two projects or feed another tool. XMLExport writes the project's whole structure to one XML file: project information, parameter definitions, view-filter rules, and every element with its properties and values. Walls get extra detail. Anything that couldn't be read goes into an error log beside the file, so gaps are visible rather than silent.</p>
+        <h2>What's in the file</h2>
+        <pre class="code">&lt;Project_Information&gt;     every property of ProjectInfo
+&lt;Parameter_List&gt;          project, global and shared definitions
+&lt;Visibility_Graphics_Overrides_Filter_List&gt;   filters with their rules
+&lt;Category_List&gt;
+  &lt;Category Type="..."&gt;
+    &lt;Element_List Count="..."&gt;
+      &lt;Element Name="..."&gt;
+        &lt;Property_List&gt;    properties, method results, parameter values</pre>
+        <h2>Design decisions</h2>
+        <div class="points"><div><i class="fa fa-exchange" aria-hidden="true"></i><b>Open format</b><span>Plain XML opens in Excel, Tableau, SQL or any other analysis tool.</span></div><div><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><b>Honest about gaps</b><span>Unreadable properties are logged instead of silently skipped.</span></div><div><i class="fa fa-plus-square-o" aria-hidden="true"></i><b>Extra detail on walls</b><span>Cross-section, flip state, width, structural usage and stacked-wall data are added.</span></div></div>
+        <div class="app-end"></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <a href="../index.html">
+        <h1><img src="../../images/3d.png" alt="Ahmad Hafez logo"></h1>
+      </a>
+    </footer>
+    <footer style="text-align: center; margin-top: 1em; margin-bottom: 3em; font-size: 13px; color: gray;">
+      &copy; Copyright Ahmad Hafez
+    </footer>
+  </div>
+  <script src="../navbar.js"></script>
+</body>
+
+</html>
